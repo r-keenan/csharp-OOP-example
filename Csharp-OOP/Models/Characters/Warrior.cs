@@ -8,12 +8,15 @@ public class Warrior
     
     public string Name { get; set; }
 
+    // Read-only when there is no longer an option to set
     public int Height
     {
+        // Read
         get
         {
             return _height;
         }
+        // Write
         set
         {
             _height = value;
