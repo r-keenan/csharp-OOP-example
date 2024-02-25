@@ -5,15 +5,16 @@ public class Program
 {
     public static void Main()
     {
-        Warrior localWarrior = CreateWarrior("Jeff",190, 80); 
+        Warrior localWarrior = CreateWarrior("Jeff",18, 190, 80); 
         
         Greetings(localWarrior);
     }
 
-    public static Warrior CreateWarrior(string name, int height, int weight) {
-        Warrior warrior = new Warrior(height, weight, name);
+    public static Warrior CreateWarrior(string name, int age, int height, int weight) {
+        Warrior warrior = new Warrior(name, age, height, weight);
         
         Console.WriteLine(warrior.Height);
+        Console.WriteLine(warrior.Age);
     
         return warrior;
     }
