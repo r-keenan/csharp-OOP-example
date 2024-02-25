@@ -50,11 +50,35 @@ public class Warrior
         // Write
         set
         {
-            _height = value;
+            if (value > 0)
+            {
+                _height = value;    
+            }
+            else
+            {
+                Console.WriteLine("Height must be greater than 0.");   
+            }
         }
     }
 
-    public int Weight { get; set; }
+    public int Weight
+    {
+        get
+        {
+            return _weight;
+        }
+        set
+        {
+            if (value > 0)
+            {
+                _weight = value;
+            }
+            else
+            {
+                Console.WriteLine("Weight must be greater than 0.");
+            }
+        }
+    }
 
     // Constructor
     public Warrior(string _name, int _age, int _height, int _weight)
