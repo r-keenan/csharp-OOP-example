@@ -3,19 +3,28 @@
 // See https://aka.ms/new-console-template for more information
 public class EntryPoint
 {
-    static void Main()
+    public static void Main()
     {
-        CreateWarrior(190, 80);    
+        Warrior localWarrior = CreateWarrior(190, 80, "Jeff"); 
+        
+        Greetings(localWarrior);
     }
 
-    static Warrior CreateWarrior(int height, int weight) {
+    public static Warrior CreateWarrior(int height, int weight, string name) {
         Warrior warrior = new Warrior();
+        
         warrior.Height = height;
         warrior.Weight = weight;
+        warrior.Name = name;
 
         Console.WriteLine(warrior.Height);
     
         return warrior;
+    }
+
+    public static void Greetings(Warrior warrior)
+    {
+        Console.WriteLine($"Greetings, {warrior.Name}!");
     }
 }
 
