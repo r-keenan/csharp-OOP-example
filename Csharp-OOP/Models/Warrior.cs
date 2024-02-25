@@ -10,6 +10,7 @@ public class Warrior
     public int Height { get; set; }
     public int Weight { get; set; }
 
+    // Constructor
     public Warrior(int _height, int _weight, string _name)
     {
         Name = _name;
