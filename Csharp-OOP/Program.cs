@@ -5,18 +5,14 @@ public class EntryPoint
 {
     public static void Main()
     {
-        Warrior localWarrior = CreateWarrior(190, 80, "Jeff"); 
+        Warrior localWarrior = CreateWarrior("Jeff",190, 80); 
         
         Greetings(localWarrior);
     }
 
-    public static Warrior CreateWarrior(int height, int weight, string name) {
-        Warrior warrior = new Warrior();
+    public static Warrior CreateWarrior(string name, int height, int weight) {
+        Warrior warrior = new Warrior(height, weight, name);
         
-        warrior.Height = height;
-        warrior.Weight = weight;
-        warrior.Name = name;
-
         Console.WriteLine(warrior.Height);
     
         return warrior;
