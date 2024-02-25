@@ -7,7 +7,19 @@ public class Warrior
     private int _weight;
     
     public string Name { get; set; }
-    public int Height { get; set; }
+
+    public int Height
+    {
+        get
+        {
+            return _height;
+        }
+        set
+        {
+            _height = value;
+        }
+    }
+
     public int Weight { get; set; }
 
     // Constructor
