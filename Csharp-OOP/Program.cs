@@ -5,9 +5,20 @@ public class Program
 {
     public static void Main()
     {
-        Warrior localWarrior = CreateWarrior("Jeff",18, 190, 80); 
-        
+        Warrior localWarrior = CreateWarrior("Jeff",18, 190, 80);
+
         Greetings(localWarrior);
+        
+        try
+        {
+            localWarrior.Age = 12;
+        }
+        catch (ArgumentOutOfRangeException ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+        
+        
     }
 
     public static Warrior CreateWarrior(string name, int age, int height, int weight) {

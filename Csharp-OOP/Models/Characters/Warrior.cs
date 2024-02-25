@@ -33,7 +33,7 @@ public class Warrior
             }
             else
             {
-                Console.WriteLine($"The age must be between 18 and 45. The Warrior, {_name}, has an age of {value}.");
+                throw new ArgumentOutOfRangeException(string.Empty, $"The age must be between 18 and 45. The Warrior, {_name}, has an age of {value}.");
             }
             
         }
@@ -56,7 +56,7 @@ public class Warrior
             }
             else
             {
-                Console.WriteLine("Height must be greater than 0.");   
+                throw new ArgumentOutOfRangeException(String.Empty, "Height must be greater than 0.");
             }
         }
     }
@@ -75,7 +75,7 @@ public class Warrior
             }
             else
             {
-                Console.WriteLine("Weight must be greater than 0.");
+                throw new ArgumentOutOfRangeException(String.Empty, "Weight must be greater than 0.");
             }
         }
     }
