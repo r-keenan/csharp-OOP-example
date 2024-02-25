@@ -1,7 +1,7 @@
 ﻿using Csharp_OOP.Models;
 
 // See https://aka.ms/new-console-template for more information
-public class EntryPoint
+public class Program
 {
     public static void Main()
     {
