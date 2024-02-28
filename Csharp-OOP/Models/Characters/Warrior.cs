@@ -1,4 +1,6 @@
-namespace Csharp_OOP.Models;
+using Csharp_OOP.Models.Weapons;
+
+namespace Csharp_OOP.Models.Characters;
 
 public class Warrior
 {
@@ -6,6 +8,7 @@ public class Warrior
     private int _age;
     private int _height;
     private int _weight;
+    private Sword _swordWeapon;
 
     public string Name
     {
@@ -80,12 +83,33 @@ public class Warrior
         }
     }
 
-    // Constructor
+    public Sword SwordWeapon
+    {
+        get
+        {
+            return _swordWeapon;
+        }
+        set
+        {
+            _swordWeapon = value;
+        }
+    }
+
+    // First constructor
+    public Warrior(int _height, int _weight)
+    {
+        Height = _height;
+        Weight = _weight;
+        Age = 18;
+    }
+    
+    // Second onstructor
     public Warrior(string _name, int _age, int _height, int _weight)
     {
         Name = _name;
         Age = _age;
         Height = _height;
         Weight = _weight;
+        SwordWeapon = new Sword();
     }
 }
