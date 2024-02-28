@@ -6,7 +6,9 @@ public class Program
     public static void Main()
     {
         Warrior firstWarrior = CreateFirstWarrior();
+        
         Warrior secondWarrior = CreateSecondWarrior("Jeff",35, 190, 80);
+        
         Warrior thirdWarrior = CreateThirdWarrior(170, 70);
 
         Greetings(firstWarrior);

@@ -5,11 +5,25 @@ namespace Csharp_OOP.Models.Characters;
 public class Warrior
 {
 
+    public static int _id;
+    
     private string _name;
     private int _age;
     private int _height;
     private int _weight;
     private Sword _swordWeapon;
+
+    public static int Id
+    {
+        get
+        {
+            return Warrior._id;
+        }
+        private set
+        {
+            Warrior._id = value;
+        }
+    }
 
     public string Name
     {
@@ -128,5 +142,6 @@ public class Warrior
         Weight = _weight;
         Age = _age;
         SwordWeapon = new Sword();
+        Warrior.Id++;
     }
 }
