@@ -95,21 +95,26 @@ public class Warrior
         }
     }
 
-    // First constructor
-    public Warrior(int _height, int _weight)
+    // Parameterless constructor
+    // calls constructor below it and assigns the default values for height and weight
+    // it will take the default values from the constructor as well
+    public Warrior() : this(170, 70)
     {
-        Height = _height;
-        Weight = _weight;
-        Age = 18;
     }
     
-    // Second onstructor
-    public Warrior(string _name, int _age, int _height, int _weight)
+    // First constructor
+    // calling next constructor
+    public Warrior(int _height, int _weight) : this(_height, _weight, "Young Warrior", 18)
+    {
+    }
+    
+    // Second constructor
+    public Warrior(int _height, int _weight, string _name, int _age )
     {
         Name = _name;
-        Age = _age;
         Height = _height;
         Weight = _weight;
+        Age = _age;
         SwordWeapon = new Sword();
     }
 }
