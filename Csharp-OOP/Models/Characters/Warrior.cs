@@ -4,6 +4,7 @@ namespace Csharp_OOP.Models.Characters;
 
 public class Warrior
 {
+
     private string _name;
     private int _age;
     private int _height;
@@ -98,6 +99,17 @@ public class Warrior
     // Parameterless constructor
     // calls constructor below it and assigns the default values for height and weight
     // it will take the default values from the constructor as well
+    
+    // Automatically generated constructor using CTRL + Enter
+    public Warrior(string name, int age, int height, int weight, Sword swordWeapon)
+    {
+        _name = name;
+        _age = age;
+        _height = height;
+        _weight = weight;
+        _swordWeapon = swordWeapon;
+    }
+    
     public Warrior() : this(170, 70)
     {
     }
