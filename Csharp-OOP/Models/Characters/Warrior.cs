@@ -135,7 +135,12 @@ public class Warrior: Character
         {
             HealthPoints = 100;
         }
+    }
 
+    //Inheriting from Character (base) constructor
+    public Warrior(int healthPoints, int weight, int age): base(healthPoints, weight, age)
+    {
+        
     }
     
 

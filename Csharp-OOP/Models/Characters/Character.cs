@@ -41,4 +41,18 @@ public class Character
             _age = value;
         }
     }
+
+    // Default/parameterless constructor is required for the base class
+    public Character()
+    {
+        
+    }
+    
+    public Character(int healthPoints, int weight, int age)
+    {
+        _healthPoints = healthPoints;
+        _weight = weight;
+        _age = age;
+    }
+    
 }
