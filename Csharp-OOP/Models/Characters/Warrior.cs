@@ -5,6 +5,13 @@ namespace Csharp_OOP.Models.Characters;
 public class Warrior
 {
 
+    private const int DEFAULT_HEIGHT = 170;
+    private const int DEFAULT_WEIGHT = 70;
+    private const string DEFAULT_NAME = "Young Warrior";
+    private const int DEFAULT_AGE = 18;
+    // cannot use const here
+    private readonly Sword DEFAULT_SWORD_WEAPON = new Sword();
+    
     public static int _id;
     
     private string _name;
@@ -124,13 +131,13 @@ public class Warrior
         _swordWeapon = swordWeapon;
     }
     
-    public Warrior() : this(170, 70)
+    public Warrior() : this(DEFAULT_HEIGHT, DEFAULT_WEIGHT)
     {
     }
     
     // First constructor
     // calling next constructor
-    public Warrior(int _height, int _weight) : this(_height, _weight, "Young Warrior", 18)
+    public Warrior(int _height, int _weight) : this(_height, _weight, DEFAULT_NAME, DEFAULT_AGE)
     {
     }
     
