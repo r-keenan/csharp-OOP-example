@@ -1,4 +1,5 @@
-﻿using Csharp_OOP.Models.Characters;
+﻿using Csharp_OOP;
+using Csharp_OOP.Models.Characters;
 
 // See https://aka.ms/new-console-template for more information
 public class Program
@@ -12,6 +13,8 @@ public class Program
         Warrior thirdWarrior = CreateThirdWarrior(170, 70);
 
         Greetings(firstWarrior);
+        
+        Warrior.GetDefaultHeight(firstWarrior);
         
         try
         {
@@ -27,7 +30,7 @@ public class Program
     {
         Warrior warrior = new Warrior();
 
-        Console.WriteLine("Created first warrior");
+        Tools.ColorfulWriteLine("Created first warrior", ConsoleColor.Blue);
 
         return warrior;
     }
@@ -39,7 +42,7 @@ public class Program
         Console.WriteLine(warrior.Age);
         Console.WriteLine(warrior.SwordWeapon.Damage);
 
-        Console.WriteLine("Created second warrior");
+        Tools.ColorfulWriteLine("Created second warrior", ConsoleColor.Cyan);
     
         return warrior;
     }
@@ -48,7 +51,7 @@ public class Program
     {
         Warrior warrior = new Warrior(height, weight);
 
-        Console.WriteLine("Created third warrior");
+        Tools.ColorfulWriteLine("Created third warrior", ConsoleColor.DarkBlue);
         
         return warrior;
     }
@@ -57,6 +60,8 @@ public class Program
     {
         Console.WriteLine($"Greetings, {warrior.Name}!");
     }
+
+    
 }
 
 

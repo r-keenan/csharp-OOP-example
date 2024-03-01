@@ -151,4 +151,10 @@ public class Warrior
         SwordWeapon = new Sword();
         Warrior.Id++;
     }
+    
+    public static void GetDefaultHeight(Warrior warrior)
+    {
+        Console.WriteLine($"Default Height: {DEFAULT_WEIGHT}");
+        Console.WriteLine($"\nDefault Weapon Damage: {warrior.DEFAULT_SWORD_WEAPON.Damage}");
+    }
 }
