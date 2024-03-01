@@ -1,3 +1,4 @@
+using Csharp_OOP.Models.Enums;
 using Csharp_OOP.Models.Weapons;
 
 namespace Csharp_OOP.Models.Characters;
@@ -9,6 +10,8 @@ public class Warrior
     private const int DEFAULT_WEIGHT = 70;
     private const string DEFAULT_NAME = "Young Warrior";
     private const int DEFAULT_AGE = 18;
+
+    private const Faction DEFAULT_FACTION = Faction.GoodGuy;
     // cannot use const here
     private readonly Sword DEFAULT_SWORD_WEAPON = new Sword();
     
@@ -16,8 +19,22 @@ public class Warrior
     
     private string _name;
     private int _age;
+    private int _healthPoints;
     private int _height;
     private int _weight;
+    private Faction _faction;
+
+    public Faction Faction
+    {
+        get
+        {
+            return this.Faction;
+        }
+        private set
+        {
+            _faction = value;
+        }
+    }
     private Sword _swordWeapon;
 
     public static int Id
@@ -61,6 +78,18 @@ public class Warrior
                 throw new ArgumentOutOfRangeException(string.Empty, $"The age must be between 18 and 45. The Warrior, {_name}, has an age of {value}.");
             }
             
+        }
+    }
+
+    public int HealthPoints
+    {
+        get
+        {
+            return _healthPoints;
+        }
+        set
+        {
+            _healthPoints = value;
         }
     }
 
@@ -137,21 +166,33 @@ public class Warrior
     
     // First constructor
     // calling next constructor
-    public Warrior(int _height, int _weight) : this(_height, _weight, DEFAULT_NAME, DEFAULT_AGE)
+    public Warrior(int _height, int _weight) : this(_height, _weight, DEFAULT_NAME, DEFAULT_AGE, DEFAULT_FACTION )
     {
     }
     
     // Second constructor
-    public Warrior(int _height, int _weight, string _name, int _age )
+    public Warrior(int _height, int _weight, string _name, int _age, Faction _faction )
     {
         Name = _name;
         Height = _height;
         Weight = _weight;
         Age = _age;
+        Faction = _faction;
         SwordWeapon = new Sword();
         Warrior.Id++;
+
+        if (_faction == Faction.GoodGuy)
+        {
+            HealthPoints = 120;
+        } else if (_faction == Faction.BadGuy)
+
+        {
+            HealthPoints = 100;
+        }
+
     }
     
+
     public static void GetDefaultHeight(Warrior warrior)
     {
         Console.WriteLine($"Default Height: {DEFAULT_WEIGHT}");

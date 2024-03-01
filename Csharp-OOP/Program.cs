@@ -1,5 +1,6 @@
 ﻿using Csharp_OOP;
 using Csharp_OOP.Models.Characters;
+using Csharp_OOP.Models.Enums;
 
 // See https://aka.ms/new-console-template for more information
 public class Program
@@ -36,7 +37,7 @@ public class Program
     }
     
     public static Warrior CreateSecondWarrior(string name, int age, int height, int weight) {
-        Warrior warrior = new Warrior(height, weight, name, age);
+        Warrior warrior = new Warrior(height, weight, name, age, Faction.GoodGuy);
         
         Console.WriteLine(warrior.Height);
         Console.WriteLine(warrior.Age);
