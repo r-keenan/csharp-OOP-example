@@ -3,7 +3,7 @@ using Csharp_OOP.Models.Weapons;
 
 namespace Csharp_OOP.Models.Characters;
 
-public class Warrior
+public class Warrior: Character
 {
 
     private const int DEFAULT_HEIGHT = 170;
@@ -18,10 +18,7 @@ public class Warrior
     public static int _id;
     
     private string _name;
-    private int _age;
-    private int _healthPoints;
     private int _height;
-    private int _weight;
     private Faction _faction;
 
     public Faction Faction
@@ -61,38 +58,6 @@ public class Warrior
         }
     }
 
-    public int Age
-    {
-        get
-        {
-            return _age;
-        }
-        set
-        {
-            if (value >= 18 && value <= 45)
-            {
-                _age = value;    
-            }
-            else
-            {
-                throw new ArgumentOutOfRangeException(string.Empty, $"The age must be between 18 and 45. The Warrior, {_name}, has an age of {value}.");
-            }
-            
-        }
-    }
-
-    public int HealthPoints
-    {
-        get
-        {
-            return _healthPoints;
-        }
-        set
-        {
-            _healthPoints = value;
-        }
-    }
-
     // Read-only when there is no longer an option to set
     public int Height
     {
@@ -114,26 +79,7 @@ public class Warrior
             }
         }
     }
-
-    public int Weight
-    {
-        get
-        {
-            return _weight;
-        }
-        set
-        {
-            if (value > 0)
-            {
-                _weight = value;
-            }
-            else
-            {
-                throw new ArgumentOutOfRangeException(String.Empty, "Weight must be greater than 0.");
-            }
-        }
-    }
-
+    
     public Sword SwordWeapon
     {
         get
@@ -151,14 +97,14 @@ public class Warrior
     // it will take the default values from the constructor as well
     
     // Automatically generated constructor using CTRL + Enter
-    public Warrior(string name, int age, int height, int weight, Sword swordWeapon)
-    {
-        _name = name;
-        _age = age;
-        _height = height;
-        _weight = weight;
-        _swordWeapon = swordWeapon;
-    }
+    //public Warrior(string name, int age, int height, int weight, Sword swordWeapon)
+    //{
+    //    _name = name;
+    //    _age = age;
+    //    _height = height;
+    //    _weight = weight;
+    //    _swordWeapon = swordWeapon;
+    //}
     
     public Warrior() : this(DEFAULT_HEIGHT, DEFAULT_WEIGHT)
     {
